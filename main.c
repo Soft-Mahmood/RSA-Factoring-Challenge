@@ -1,12 +1,11 @@
-#include "main.h"
+#include "factor.h"
 
 /**
- * main - calls the factorise function
- * @argc: is the argument vector
- * @argv: is the argument count
- * Return: 0 on success and 1 on failure.
+ * main - main function
+ *
+ *
+ * Return: void
  */
-
 int main(int argc, char *argv[])
 {
 	FILE *fptr;
@@ -16,10 +15,10 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		fprintf(stderr, "Usage: ./factor number\n");
+		fprintf(stderr, "Usage: ./factor file\n");
 		exit(EXIT_FAILURE);
 	}
-	
+
 	fptr = fopen(argv[1], "r");
 	if (fptr == NULL)
 	{
@@ -29,7 +28,9 @@ int main(int argc, char *argv[])
 	while((line = getline(&buffer, &count, fptr)) != -1)
 	{
 
-		factor(buffer);
+		factorize(buffer);
 	}
+
+	fclose(fptr);
 	return (0);
 }

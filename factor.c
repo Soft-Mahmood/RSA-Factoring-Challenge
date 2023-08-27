@@ -1,27 +1,29 @@
-#include "main.h"
+#include "factor.h"
 
 /**
- * factor - facotrises a number into a product of two smaller numbers.
- * @n: is the number to factorise
- * Return: 0 if suceessful.
+ * factorize - The function factorize a number
+ * @buffer: pointer to the address of the number
  *
+ * Author: Thaoban Abdrasheed
+ * Return: int
  */
-
-int factor(char *buffer)
+int factorize(char *buffer)
 {
-	unsigned int i, j;
 
-	j = atoi(buffer);
+	uint32_t num;
+	uint32_t i;
 
-	for (i = 2; i <= j; i++)
+	num = atoi(buffer);
+
+
+	for (i = 2; i < num; i++)
 	{
-		if (j % i == 0)
+		if (num % i == 0)
 		{
-			printf("%d = %d * %d\n", j, j / i, i);
+			printf("%d=%d*%d\n",num,num/i,i);
 			break;
 		}
-		else
-			continue;
 	}
-	return (0);
+
+return (0);
 }
