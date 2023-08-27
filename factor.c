@@ -15,10 +15,9 @@ int factorize(char *buffer)
 
 	num = atoi(buffer);
 
-
 	for (i = 2; i < num; i++)
 	{
-		if (num % i == 0)
+		if (is_prime(i) == 0)
 		{
 			printf("%d=%d*%d\n",num,num/i,i);
 			break;
