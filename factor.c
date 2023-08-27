@@ -7,18 +7,18 @@
  *
  */
 
-int factor(int n)
+int factor(char *buffer)
 {
-	int i, j;
+	unsigned int i, j;
 
-	j = 0;
+	j = atoi(buffer);
 
-	for (i = 1; i <= n; i++)
+	for (i = 2; i <= j; i++)
 	{
-		if (n % i == 0)
+		if (j % i == 0)
 		{
-			j = n / i;
-			printf("%d = %d * %d\n", n, i, j);
+			printf("%d = %d * %d\n", j, j / i, i);
+			break;
 		}
 		else
 			continue;

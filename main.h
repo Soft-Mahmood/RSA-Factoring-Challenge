@@ -3,7 +3,10 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
-int factor(int n);
+#define _GNU_SOURCE
+
+int factor(char *buffer);
 
 #endif
