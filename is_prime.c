@@ -6,9 +6,9 @@
  * Return: 0 if prime, 1 if not prime, and -1 on failure
  */
 
-int is_prime(int n)
+int is_prime(size_t n)
 {
-	int m;
+	size_t m;
 
 	for (m = 2; m < n; m++)
 	{
